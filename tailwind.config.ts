@@ -94,7 +94,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in-down": "fade-in-down 0.8s ease-out",
         "fade-in": "fade-in 1s ease-out",
-        "scroll-left": "scroll-left 162s linear infinite",
+        "scroll-left": "scroll-left 60s linear infinite",
         "float": "float 6s ease-in-out infinite",
       },
     },
