@@ -1,0 +1,4 @@
+project_id = "atbrrckusxcpkewoddfb"
+
+[functions.timoexo-chat]
+verify_jwt = false

@@ -1,13 +1,12 @@
 import { MessageCircle, Sparkles } from "lucide-react";
-import { useState } from "react";
+import { useChatState } from "@/hooks/useChatState";
+import ChatDrawer from "./chatbot/ChatDrawer";
 
 const ChatbotWidget = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { state, setOpen } = useChatState();
 
   const handleClick = () => {
-    setIsOpen(!isOpen);
-    console.log("Chatbot clicked!");
-    // Future: Open chat modal/drawer
+    setOpen(!state.isOpen);
   };
 
   return (
@@ -64,6 +63,9 @@ const ChatbotWidget = () => {
           Chat with us!
         </div>
       </div>
+
+      {/* Chat Drawer */}
+      <ChatDrawer open={state.isOpen} onOpenChange={setOpen} />
     </div>
   );
 };
