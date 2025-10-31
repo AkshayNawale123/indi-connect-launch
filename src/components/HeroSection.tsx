@@ -20,34 +20,19 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
-      {/* Grid Background */}
-      <div 
-        className="absolute inset-0 opacity-30"
-        style={{
-          background: `
-            linear-gradient(to right, 
-              rgba(245, 247, 250, 0) 0%, 
-              rgba(245, 247, 250, 0.4) 50%, 
-              rgba(245, 247, 250, 0) 100%
-            ),
-            repeating-linear-gradient(
-              90deg,
-              #ffffff 0px,
-              #ffffff 110px,
-              rgba(245, 247, 250, 0.3) 110px,
-              rgba(245, 247, 250, 0.3) 111px
-            ),
-            repeating-linear-gradient(
-              0deg,
-              #ffffff 0px,
-              #ffffff 110px,
-              rgba(245, 247, 250, 0.3) 110px,
-              rgba(245, 247, 250, 0.3) 111px
-            )
-          `,
-          backgroundColor: '#ffffff',
-        }}
-      />
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-40"
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Overlay for better text visibility */}
+      <div className="absolute inset-0 bg-white/30" />
 
       <div className="max-w-7xl w-full relative z-10">
         {/* Hero Content */}
