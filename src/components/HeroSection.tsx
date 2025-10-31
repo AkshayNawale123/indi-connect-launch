@@ -1,18 +1,18 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ClipboardList, ShieldCheck, Package, Ship, Globe, Briefcase, Handshake, TrendingUp, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   const tradeSteps = [
-    { number: 1, icon: "🏭", title: "Indian Manufacturers" },
-    { number: 2, icon: "📋", title: "Product Registration" },
-    { number: 3, icon: "✓", title: "Quality Check" },
-    { number: 4, icon: "📦", title: "Packaging" },
-    { number: 5, icon: "🚢", title: "Logistics" },
-    { number: 6, icon: "🌍", title: "International Buyers" },
-    { number: 7, icon: "💼", title: "Market Entry" },
-    { number: 8, icon: "🤝", title: "Partnership" },
-    { number: 9, icon: "📈", title: "Growth" },
-    { number: 10, icon: "🌟", title: "Success" },
+    { Icon: Globe, title: "Indian Manufacturers" },
+    { Icon: ClipboardList, title: "Product Registration" },
+    { Icon: ShieldCheck, title: "Quality Check" },
+    { Icon: Package, title: "Packaging" },
+    { Icon: Ship, title: "Logistics" },
+    { Icon: Globe, title: "International Buyers" },
+    { Icon: Briefcase, title: "Market Entry" },
+    { Icon: Handshake, title: "Partnership" },
+    { Icon: TrendingUp, title: "Growth" },
+    { Icon: Star, title: "Success" },
   ];
 
   // Duplicate for seamless scroll
@@ -73,20 +73,21 @@ const HeroSection = () => {
           </h3>
           
           <div className="overflow-hidden relative">
-            <div className="flex gap-3 animate-scroll-left">
+            <div className="flex gap-6 animate-scroll-left">
               {allSteps.map((step, index) => (
-                <div key={index} className="flex items-center gap-3 flex-shrink-0">
-                  <div className="min-w-[180px] bg-gradient-to-br from-[hsl(var(--brand-blue))]/5 to-[hsl(var(--brand-green))]/5 border-2 border-[hsl(var(--brand-blue))]/20 rounded-xl p-5 text-center hover:scale-105 hover:border-[hsl(var(--brand-blue))] hover:shadow-lg transition-all duration-300 cursor-pointer">
-                    <div className="w-10 h-10 bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-green))] rounded-full flex items-center justify-center font-bold text-white text-lg mb-3 mx-auto shadow-md">
-                      {step.number}
-                    </div>
-                    <div className="text-3xl mb-2">{step.icon}</div>
+                <div key={index} className="flex items-center gap-6 flex-shrink-0">
+                  <div className="min-w-[180px] flex flex-col items-center justify-center p-5 text-center hover:scale-110 transition-all duration-300 cursor-pointer">
+                    <step.Icon 
+                      size={64} 
+                      className="text-[hsl(var(--brand-blue))] mb-4 drop-shadow-lg" 
+                      strokeWidth={1.5}
+                    />
                     <div className="text-sm font-semibold text-[hsl(var(--brand-blue))] leading-tight">
                       {step.title}
                     </div>
                   </div>
                   {index < allSteps.length - 1 && (
-                    <div className="text-[hsl(var(--brand-green))] text-2xl flex-shrink-0 opacity-60">
+                    <div className="text-[hsl(var(--brand-green))] text-3xl flex-shrink-0 opacity-60 font-bold">
                       →
                     </div>
                   )}
