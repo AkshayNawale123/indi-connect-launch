@@ -84,7 +84,7 @@ const ChatDrawer = ({ open, onOpenChange }: ChatDrawerProps) => {
 
   return (
     <Drawer open={open} onOpenChange={onOpenChange}>
-      <DrawerContent className="h-[85vh] max-h-[700px]">
+      <DrawerContent className="h-[70vh] max-h-[600px] max-w-[420px] mx-auto">
         <DrawerHeader className="border-b">
           <div className="flex items-center justify-between">
             <DrawerTitle>T-imoexo Trade Assistant</DrawerTitle>
