@@ -24,6 +24,7 @@ export interface ChatState {
   isOpen: boolean;
   chatStartTime?: Date;
   contactRequested: boolean;
+  contactSkipped: boolean;
   escalationOffered: boolean;
 }
 
@@ -33,6 +34,7 @@ const initialState: ChatState = {
   userData: {},
   isOpen: false,
   contactRequested: false,
+  contactSkipped: false,
   escalationOffered: false,
 };
 
@@ -113,6 +115,10 @@ export const useChatState = () => {
     setState(prev => ({ ...prev, contactRequested: true }));
   };
 
+  const markContactSkipped = () => {
+    setState(prev => ({ ...prev, contactSkipped: true }));
+  };
+
   const markEscalationOffered = () => {
     setState(prev => ({ ...prev, escalationOffered: true }));
   };
@@ -131,6 +137,7 @@ export const useChatState = () => {
     setOpen,
     startChat,
     markContactRequested,
+    markContactSkipped,
     markEscalationOffered,
     resetChat,
   };

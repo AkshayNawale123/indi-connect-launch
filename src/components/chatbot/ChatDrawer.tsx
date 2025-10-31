@@ -29,6 +29,7 @@ const ChatDrawer = ({ open, onOpenChange }: ChatDrawerProps) => {
     setUserData,
     startChat,
     markContactRequested,
+    markContactSkipped,
     markEscalationOffered,
   } = useChatState();
 
@@ -75,6 +76,7 @@ const ChatDrawer = ({ open, onOpenChange }: ChatDrawerProps) => {
   };
 
   const handleContactSkip = () => {
+    markContactSkipped();
     addMessage('system', 'No problem! You can provide your details anytime.');
   };
 
@@ -119,7 +121,7 @@ const ChatDrawer = ({ open, onOpenChange }: ChatDrawerProps) => {
               />
               
               {/* Contact Form Overlay */}
-              {state.contactRequested && !state.userData.email && (
+              {state.contactRequested && !state.userData.email && !state.contactSkipped && (
                 <div className="p-4 border-t bg-background">
                   <ContactCollectionStage
                     onSubmit={handleContactSubmit}
