@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Phone, MessageSquare, X } from 'lucide-react';
-import { getPhoneLink, getWhatsAppLink } from '@/lib/chatConstants';
+import { getPhoneLink, getWhatsAppLink, REPRESENTATIVE_NAME } from '@/lib/chatConstants';
 
 interface EscalationNudgeProps {
   userName: string;
@@ -22,7 +22,7 @@ const EscalationNudge = ({ userName, category, onDismiss }: EscalationNudgeProps
       <div className="mb-3">
         <h3 className="font-semibold">Ready to take the next step?</h3>
         <p className="text-sm text-muted-foreground mt-1">
-          Speak directly with our trade specialists for personalized guidance.
+          Speak directly with {REPRESENTATIVE_NAME}, our trade specialist, for personalized guidance.
         </p>
       </div>
 

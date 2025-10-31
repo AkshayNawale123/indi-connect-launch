@@ -1,5 +1,6 @@
-export const TIMOEXO_PHONE = "+91 9876543210"; // Replace with actual number
-export const TIMOEXO_WHATSAPP = "+919876543210"; // Replace with actual WhatsApp number (no spaces)
+export const TIMOEXO_PHONE = "+91 82374 39036";
+export const TIMOEXO_WHATSAPP = "+918237439036"; // No spaces for WhatsApp link
+export const REPRESENTATIVE_NAME = "Yash";
 
 export const STORAGE_KEY = 'timoexo_chat_state';
 
@@ -32,7 +33,7 @@ export const CATEGORY_OPTIONS = [
 export const getWhatsAppLink = (userName: string, category: string) => {
   const categoryText = CATEGORY_OPTIONS.find(opt => opt.value === category)?.label || category;
   const message = encodeURIComponent(
-    `Hi! I'm ${userName} and I'm interested in T-imoexo services as a ${categoryText}. I'd like to speak with a representative.`
+    `Hi! I'm ${userName} and I'm interested in T-imoexo services as a ${categoryText}. I'd like to speak with ${REPRESENTATIVE_NAME}.`
   );
   return `https://wa.me/${TIMOEXO_WHATSAPP}?text=${message}`;
 };
