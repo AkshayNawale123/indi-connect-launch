@@ -32,7 +32,7 @@ const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
       {/* Background Video */}
-      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-60">
+      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-70">
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
 
